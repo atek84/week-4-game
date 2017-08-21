@@ -29,8 +29,9 @@ $(".crystal1").on("click", function() {
 
     totalScore += crystal1Value;
     alert(crystal1Value);
+    console.log(crystal1Value);
 });
-console.log(crystal1Value);
+
 
 //   for (var i = 0; i < numberOptions.length; i++) {
 
