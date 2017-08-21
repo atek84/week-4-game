@@ -26,7 +26,7 @@ body {
 	margin-top: 12px;
 }
 
-#displayNumber {
+#display-number {
 	padding-left: 10px;
     font-size: 34px;
 }
@@ -37,17 +37,19 @@ body {
 	margin-top: 12px;
 }
 
-#wins {
+#win {
 	text-align: center;
 	padding-top: 30px;
 }
 
-#losses {
+#loss {
 	text-align: center;
 }
 
 .crystalRow {
-	margin-top: 7px;
+	margin-top: 12px;
+	display: inline-flex;
+	margin-bottom: 12px;
 }
 
 .crystal1 {
@@ -82,7 +84,7 @@ body {
 	margin-bottom: 40px;
 }
 
-#totalScoreDisplay {
+#total-score-display {
 	font-size: 34px;
 	padding-left: 10px;
 }

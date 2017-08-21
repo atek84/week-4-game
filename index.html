@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Crystal Game</title>
+  <!-- Added link to the jQuery Library -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="css/style.css"> 
   <link rel="stylesheet" href="css/reset.css"> 
   <script src="javascript/game.js"></script>
-  <!-- Added link to the jQuery Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
   <!-- Added a link to Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
@@ -42,26 +42,26 @@
 	<div class="row">
 		<div class="col-sm-3">
 			<div class="numToBeat">
-				<div id="displayNumber">39</div>
+				<span id="display-number"></span>
 			</div>
 		</div>
 		<div class="col-sm-2">
 			<div class="winLossBox">
-				<p id='wins'> Wins: 0</p>
-				<p id='losses'>Losses: 0</p>
+				<p id='win'> Wins: 0</p>
+				<p id='loss'>Losses: 0</p>
 			</div>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-md-5">
-			<div class="crystalRow">
-				<img class="crystal1" src=images/red-crystal.png></img>
-				<img class="crystal2" src=images/blue-crystal.png></img>
-				<img class="crystal3" src=images/purple-crystal.png></img>
-				<img class="crystal4" src=images/green-crystal.png></img>
+			<div class="crystalRow all-crystals">
+				<button><img class="crystal1" src=images/red-crystal.png></img>
+				<button><img class="crystal2" src=images/blue-crystal.png></img>
+				<button><img class="crystal3" src=images/purple-crystal.png></img>
+				<button><img class="crystal4" src=images/green-crystal.png></img>
 			</div>
-		</div>
+		</div> 
 	</div>
 
 	<!-- Total Score -->
@@ -70,10 +70,12 @@
 			<p class="totalScore">Your total score is: </p>
 		</div>
 	</div>
+	
+	<!-- Score Display -->
 	<div class="row">
 		<div class="col-md-3">
 			<div class="scoreDisplay">
-				<div id="totalScoreDisplay">
+				<div id="total-score-display">
 					0
 				</div>
 			</div>
