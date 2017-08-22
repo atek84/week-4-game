@@ -9,7 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="css/style.css"> 
   <link rel="stylesheet" href="css/reset.css"> 
-  <script src="javascript/game.js"></script>
+  
   <!-- Added a link to Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
@@ -56,10 +56,10 @@
 	<div class="row">
 		<div class="col-md-5">
 			<div class="crystalRow all-crystals">
-				<button><img class="crystal1" src=images/red-crystal.png></img>
-				<button><img class="crystal2" src=images/blue-crystal.png></img>
-				<button><img class="crystal3" src=images/purple-crystal.png></img>
-				<button><img class="crystal4" src=images/green-crystal.png></img>
+				<button class="crystal1"><img  src=images/red-crystal.png></img></button>
+				<button class="crystal2"><img src=images/blue-crystal.png></img></button>
+				<button class="crystal3"><img src=images/purple-crystal.png></img></button>
+				<button class="crystal4"><img src=images/green-crystal.png></img></button>
 			</div>
 		</div> 
 	</div>
@@ -75,13 +75,17 @@
 	<div class="row">
 		<div class="col-md-3">
 			<div class="scoreDisplay">
-				<div id="total-score-display">
-					0
-				</div>
+				<span id="total-score-display">
+					
+				</span>
 			</div>
 		</div>
 	</div>
   </div>
+
+
+<script src="javascript/game.js"></script>
+
 
 </body>
 </html>
