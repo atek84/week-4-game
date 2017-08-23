@@ -26,12 +26,12 @@ console.log(displayNumber);
 //pick random numbers
 picknums();
 console.log(numberArray);
-$("#display-number").append("<span>" + displayNumber + "</span>");
+$("#display-number").html("<span>" + displayNumber + "</span>");
 
-var numberOptions1 = Math.floor(Math.random() * (15 - 5) + 5);
-var numberOptions2 = Math.floor(Math.random() * (10 - 5) + 5);
-var numberOptions3 = Math.floor(Math.random() * (10 - 5) + 5);
-var numberOptions4 = Math.floor(Math.random() * (12 - 5) + 5);
+// var numberOptions1 = Math.floor(Math.random() * (15 - 5) + 5);
+// var numberOptions2 = Math.floor(Math.random() * (10 - 5) + 5);
+// var numberOptions3 = Math.floor(Math.random() * (10 - 5) + 5);
+// var numberOptions4 = Math.floor(Math.random() * (12 - 5) + 5);
 	// console.log(numberOptions)
   // Next we create a for loop to create crystals for every numberOption.
 var crystal1 = $(".crystal1");
@@ -39,10 +39,6 @@ var crystal2 = $(".crystal2");
 var crystal3 = $(".crystal3");
 var crystal4 = $(".crystal4");
 
-// crystal1.attr("data-crystalvalue", numberOptions1);
-// crystal2.attr("data-crystalvalue", numberOptions2);
-// crystal3.attr("data-crystalvalue", numberOptions3);
-// crystal4.attr("data-crystalvalue", numberOptions4);
 
 crystal1.attr("data-crystalvalue", numberArray[0]);
 crystal2.attr("data-crystalvalue", numberArray[1]);
@@ -60,15 +56,21 @@ if (totalScore === displayNumber) {
       wins++;
       totalScore = 0;
       $('#win').html('Wins: ' + wins);
+      displayNumber = Math.floor(Math.random() * (90 - 30) + 30);
+      $("#display-number").html("<span>" + displayNumber + "</span>");
+      picknums();
+      
     }
 
     else if (totalScore >= displayNumber) {
       console.log("You lose!!");
       losses++;
       totalScore = 0;
+
       $('#loss').html('Losses: ' + losses);
       displayNumber = Math.floor(Math.random() * (90 - 30) + 30);
-      $("#display-number").append("<span>" + displayNumber + "</span>");
+      $("#display-number").html("<span>" + displayNumber + "</span>");
+      picknums();
     }
   }
 
