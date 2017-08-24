@@ -55,7 +55,7 @@ $("#display-number").html("<span>" + displayNumber + "</span>");
       picknums();
       console.log(numberArray);  
       resetGame();
-      $("#total-score-display").html("<span>" + 0 + "</span>");
+      // $("#total-score-display").html("<span>" + totalScore + "</span>");
       
 
     } else if (totalScore >= displayNumber) {
@@ -77,6 +77,7 @@ $("#display-number").html("<span>" + displayNumber + "</span>");
     alert("Play Again!");
     wins = 0;
     losses = 0;
+    $("#total-score-display").html(totalScore);
     }
   }
 
