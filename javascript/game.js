@@ -10,14 +10,9 @@ $(document).ready(function() {
 
     for(i =0 ; numberArray.length < 4; i++){
       var pickRandom = Math.floor(Math.random() * (15 - 5) + 5);
-    // console.log(numberArray.indexOf(pickRandom));
-    // console.log(pickRandom +" is NOT unique, and found at index: " + numberArray.indexOf(pickRandom));
 
       if(numberArray.indexOf(pickRandom) < 0){
         numberArray.push(pickRandom);
-        // console.log(numberArray.indexOf(pickRandom));
-        // console.log(pickRandom +" is unique, and found at index: " + numberArray.indexOf(pickRandom));
-        
         var crystal1 = $(".crystal1");
         var crystal2 = $(".crystal2");
         var crystal3 = $(".crystal3");
@@ -25,7 +20,7 @@ $(document).ready(function() {
         crystal1.attr("data-crystalvalue", numberArray[0]);
         crystal2.attr("data-crystalvalue", numberArray[1]);
         crystal3.attr("data-crystalvalue", numberArray[2]);
-        crystal4.attr("data-crystalvalue", numberArray[3]);
+        crystal4.attr("data-crystalvalue", numberArray[3]);        
       }
     } 
   }
@@ -87,46 +82,36 @@ $("#display-number").html("<span>" + displayNumber + "</span>");
     }
   }
 
+
   $(".crystal1").on("click", function() { 
    var crystal1Value = ($(this).attr("data-crystalvalue"));
    crystal1Value = parseInt(crystal1Value);
-
    totalScore += crystal1Value;
    console.log(crystal1Value);
-
    writeStats();
-
-
  });
 
   $(".crystal2").on("click", function() { 
-
     var crystal2Value = ($(this).attr("data-crystalvalue"));
     crystal2Value = parseInt(crystal2Value);
-
     totalScore += crystal2Value;
     console.log(crystal2Value);
     writeStats();
   });
 
   $(".crystal3").on("click", function() { 
-
     var crystal3Value = ($(this).attr("data-crystalvalue"));
-    crystal3Value = parseInt(crystal3Value);
-    
+    crystal3Value = parseInt(crystal3Value);    
     totalScore += crystal3Value;
     console.log(crystal3Value);
     writeStats();
   });
 
   $(".crystal4").on("click", function() { 
-
     var crystal4Value = ($(this).attr("data-crystalvalue"));
     crystal4Value = parseInt(crystal4Value);
-
     totalScore += crystal4Value;
-    console.log(crystal4Value);
-    
+    console.log(crystal4Value);    
     writeStats();
   });
 
