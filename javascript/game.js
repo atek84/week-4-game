@@ -25,10 +25,10 @@ $(document).ready(function() {
         // console.log(numberArray.indexOf(pickRandom));
         // console.log(pickRandom +" is unique, and found at index: " + numberArray.indexOf(pickRandom));
         
-        // var crystal1 = $(".crystal1");
-        // var crystal2 = $(".crystal2");
-        // var crystal3 = $(".crystal3");
-        // var crystal4 = $(".crystal4");
+        var crystal1 = $(".crystal1");
+        var crystal2 = $(".crystal2");
+        var crystal3 = $(".crystal3");
+        var crystal4 = $(".crystal4");
         crystal1.attr("data-crystalvalue", numberArray[0]);
         crystal2.attr("data-crystalvalue", numberArray[1]);
         crystal3.attr("data-crystalvalue", numberArray[2]);
@@ -40,19 +40,19 @@ $(document).ready(function() {
 
 
 //pick random numbers
-// picknums();
+picknums();
 console.log(numberArray);
-// $("#display-number").html("<span>" + displayNumber + "</span>");
+$("#display-number").html("<span>" + displayNumber + "</span>");
 
 
 
 
 //gage
-// $("#total-score-display").html("<span>" + totalScore + "</span>");
+$("#total-score-display").html("<span>" + totalScore + "</span>");
 
 // My code is not choosing a new displayNumber when the if statment is achieved, it only changes
 //  when my if else if achieved. ----- Also, I'm trying to reset the totalScore var to display 0
-//  in my line 9 function resetArray and it's not letting me do it. 
+//  in my line 9 function resetArray and it's not letting me do it.
 
 function writeStats() {
   if (totalScore === displayNumber) {
@@ -60,7 +60,7 @@ function writeStats() {
     resetArray();
     console.log('you win');
     wins++;
-      // totalScore = 0;
+      totalScore = 0;
     $('#win').html('Wins: ' + wins);
       // displayNumber = Math.floor(Math.random() * (90 - 30) + 30);
       // $("#display-number").html("<span>" + displayNumber + "</span>");
@@ -72,7 +72,7 @@ function writeStats() {
     resetArray();
     console.log("You lose!!");
     losses++;
-      // totalScore = 0;
+      totalScore = 0;
 
     $('#loss').html('Losses: ' + losses);
       // displayNumber = Math.floor(Math.random() * (90 - 30) + 30);
