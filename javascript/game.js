@@ -36,8 +36,9 @@ console.log(numberArray);
 $("#display-number").html("<span>" + displayNumber + "</span>");
 
   function resetArray() {
+
     numberArray = [];
-    // totalScore = 0;
+    // $("#total-score-display").html("<span>" + totalScore + "</span>");
     displayNumber = Math.floor(Math.random() * (90 - 30) + 30);
     $("#display-number").html("<span>" + displayNumber + "</span>");
   }
@@ -47,16 +48,20 @@ $("#display-number").html("<span>" + displayNumber + "</span>");
     if (totalScore === displayNumber) {
       resetArray();
       console.log('you win');
+      
       wins++;
       totalScore = 0;
       $('#win').html('Wins: ' + wins);
       picknums();
       console.log(numberArray);  
       resetGame();
+      $("#total-score-display").html("<span>" + 0 + "</span>");
+      
 
     } else if (totalScore >= displayNumber) {
       resetArray();
       console.log("You lose!!");
+      // $("#total-score-display").html("<span>" + totalScore + "</span>");
       losses++;
       totalScore = 0;
       $('#loss').html('Losses: ' + losses);
@@ -66,9 +71,12 @@ $("#display-number").html("<span>" + displayNumber + "</span>");
     }
   }
 
+
   function resetGame() {
-    if( wins === 5 || losses === 5) {
-      $('body').reset();
+    if(wins === 5 || losses === 5) {
+    alert("Play Again!");
+    wins = 0;
+    losses = 0;
     }
   }
 
