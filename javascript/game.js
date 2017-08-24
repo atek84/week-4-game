@@ -3,7 +3,7 @@ $(document).ready(function() {
   var displayNumber = Math.floor(Math.random() * (90 - 45) + 45);
   var wins = 0;
   var losses = 0;
-  var totalScore = 0;
+  var totalScore = 0; 
   var numberArray = [];
 
   function picknums() {
