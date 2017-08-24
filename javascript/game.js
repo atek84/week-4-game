@@ -6,13 +6,6 @@ $(document).ready(function() {
   var totalScore = 0;
   var numberArray = [];
 
-  function resetArray() {
-    numberArray = [];
-    totalScore = 0;
-    displayNumber = Math.floor(Math.random() * (90 - 30) + 30);
-    $("#display-number").html("<span>" + displayNumber + "</span>");
-  }
-
   function picknums() {
 
     for(i =0 ; numberArray.length < 4; i++){
@@ -37,54 +30,47 @@ $(document).ready(function() {
     } 
   }
 
-
-
-//pick random numbers
 picknums();
 console.log(numberArray);
+
 $("#display-number").html("<span>" + displayNumber + "</span>");
 
+  function resetArray() {
+    numberArray = [];
+    // totalScore = 0;
+    displayNumber = Math.floor(Math.random() * (90 - 30) + 30);
+    $("#display-number").html("<span>" + displayNumber + "</span>");
+  }
+  function writeStats() {
 
-
-
-//gage
-$("#total-score-display").html("<span>" + totalScore + "</span>");
-
-// My code is not choosing a new displayNumber when the if statment is achieved, it only changes
-//  when my if else if achieved. ----- Also, I'm trying to reset the totalScore var to display 0
-//  in my line 9 function resetArray and it's not letting me do it.
-
-function writeStats() {
-  if (totalScore === displayNumber) {
     $("#total-score-display").html("<span>" + totalScore + "</span>");
-    resetArray();
-    console.log('you win');
-    wins++;
+    if (totalScore === displayNumber) {
+      resetArray();
+      console.log('you win');
+      wins++;
       totalScore = 0;
-    $('#win').html('Wins: ' + wins);
-      // displayNumber = Math.floor(Math.random() * (90 - 30) + 30);
-      // $("#display-number").html("<span>" + displayNumber + "</span>");
-    picknums();
-    console.log(numberArray);  
-
-  } else if (totalScore >= displayNumber) {
-    $("#total-score-display").html("<span>" + totalScore + "</span>");
-    resetArray();
-    console.log("You lose!!");
-    losses++;
-      totalScore = 0;
-
-    $('#loss').html('Losses: ' + losses);
-      // displayNumber = Math.floor(Math.random() * (90 - 30) + 30);
-      // $("#display-number").html("<span>" + displayNumber + "</span>");
-
-      
+      $('#win').html('Wins: ' + wins);
       picknums();
-      console.log(numberArray);
+      console.log(numberArray);  
+      resetGame();
 
+    } else if (totalScore >= displayNumber) {
+      resetArray();
+      console.log("You lose!!");
+      losses++;
+      totalScore = 0;
+      $('#loss').html('Losses: ' + losses);
+      picknums();
+      console.log(numberArray); 
+      resetGame();
     }
   }
 
+  function resetGame() {
+    if( wins === 5 || losses === 5) {
+      $('body').reset();
+    }
+  }
 
   $(".crystal1").on("click", function() { 
    var crystal1Value = ($(this).attr("data-crystalvalue"));
